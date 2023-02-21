@@ -7573,7 +7573,7 @@ public:
 
     VkDeviceSize GetSumFreeSize() const override { return m_SumFreeSize; }
     bool IsEmpty() const override { return GetAllocationCount() == 0; }
-    VkDeviceSize GetAllocationOffset(VmaAllocHandle allocHandle) const override { return (VkDeviceSize)allocHandle - 1; };
+    VkDeviceSize GetAllocationOffset(VmaAllocHandle allocHandle) const override { return (VkDeviceSize)allocHandle - 1; }
 
     void Init(VkDeviceSize size) override;
     bool Validate() const override;
@@ -9932,7 +9932,7 @@ public:
     size_t GetFreeRegionsCount() const override { return m_BlocksFreeCount + 1; }
     VkDeviceSize GetSumFreeSize() const override { return m_BlocksFreeSize + m_NullBlock->size; }
     bool IsEmpty() const override { return m_NullBlock->offset == 0; }
-    VkDeviceSize GetAllocationOffset(VmaAllocHandle allocHandle) const override { return ((Block*)allocHandle)->offset; };
+    VkDeviceSize GetAllocationOffset(VmaAllocHandle allocHandle) const override { return ((Block*)allocHandle)->offset; }
 
     void Init(VkDeviceSize size) override;
     bool Validate() const override;
